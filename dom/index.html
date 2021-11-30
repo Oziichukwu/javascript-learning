@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-    <title>Document</title>
+    
+
+    <title>Task List</title>
 </head>
 <body>
     <div class="container">
@@ -22,13 +24,19 @@
                                     <label for="task">New Task</label>
                                     
                                 </div>
-                                <input type="submit" value="Add-Task" class="btn">
+                                <input type="submit" value="Add Task" class="btn">
                             </form>
                         </div>
                     </div>
                     <div class="card-action">
                         <h5 id="task-title">Tasks</h5>
-                        
+                        <div class="input-field col s12">
+                            <input type="text" name="filter" id="filter">
+                            <label for="filter">Filter Task</label>
+                             
+                        </div>
+                        <ul class="collection"></ul>
+                        <a href="#" class="clear-tasks btn black">Clear Tasks</a>
                     </div>
                 </div>
             </div>
