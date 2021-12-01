@@ -115,14 +115,51 @@ class Person1{
     }
 
     calculateAge(){
-        const diff = Date.now() - this.birthday.getTime();
-        const ageDate = new Date(diff);
-        return Math.abs(ageDate.getUTCFullYear() - 1970);
+       const diff = Date.now() - this.birthday.getTime();
+       const ageDate = new Date(diff);
+       return Math.abs(ageDate.getUTCFullYear() - 1970);
+
+    }
+    getsMarried (newLastName){
+        this.lastName = newLastName;
+    }
+
+    static addNumbers(x,y){
+        return x * y;
     }
 }
 
 
 const femi = new Person1('Macha', 'William', '10-11-21');
 
+femi.getsMarried('shalala')
 console.log(femi)
 console.log(femi.greeting())
+
+
+// static methods
+// this do not need an object to instantiate the method
+
+class Person2{
+
+    constructor(firstName,lastName,age) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+    static addNumbers(x,y) {
+
+        return x + y;
+    }
+}
+
+
+console.log(Person1.addNumbers(6,7))
+console.log(Person2.addNumbers(8,9));
+
+
+
+// sub classes (inheritance)
+
