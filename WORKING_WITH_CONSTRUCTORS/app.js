@@ -61,3 +61,68 @@ const bodyCalories = micheal.getTotalAmountOfCalories(400, 201, 30);
 
 console.log(bodyCalories)
 
+
+// working with object.create
+
+const PersonPrototype = {
+
+    greeting: function(){
+        return `Hello there ${this.firstName} ${this.lastName}`;
+    },
+
+    getMarried: function(newLastName){
+
+        this.lastName = newLastName;
+    }
+}
+
+
+const mary = Object.create(PersonPrototype);
+
+mary.firstName = 'Mary';
+mary.lastName = 'Funsho';
+mary.age = 56;
+
+
+mary.getMarried('mofe');
+console.log(mary)
+console.log(mary.greeting())
+
+const mosun = Object.create(PersonPrototype,{
+
+    firstName: {value: 'helen'},
+    lastName: {value: 'victor'},
+    age: {value:45}
+}); 
+
+
+console.log(mosun);
+console.log(mosun.greeting())
+
+// working with ES6 syntax
+
+
+class Person1{
+    constructor(firstName, lastName,dob){
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = new Date(dob);
+    }
+
+    greeting(){
+        return `Hello there ${this.firstName} ${this.lastName}`;
+    }
+
+    calculateAge(){
+        const diff = Date.now() - this.birthday.getTime();
+        const ageDate = new Date(diff);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+}
+
+
+const femi = new Person1('Macha', 'William', '10-11-21');
+
+console.log(femi)
+console.log(femi.greeting())
