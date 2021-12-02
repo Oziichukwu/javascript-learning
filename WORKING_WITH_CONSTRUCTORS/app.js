@@ -163,3 +163,37 @@ console.log(Person2.addNumbers(8,9));
 
 // sub classes (inheritance)
 
+class Person3{
+
+    constructor(firstName, lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    greeting(){
+        return  `Hello there ${this.firstName} ${this.lastName}`;
+
+    }
+}
+
+
+class Customer extends Person3{
+
+    constructor(firstName, lastName, phone, membership){
+
+        super(firstName, lastName);
+        this.phone = phone;
+        this.membership = membership;
+    }
+
+    static getMembershipCost(){
+        return 500;
+    }
+}
+
+const john = new Customer('mary', 'nonso', '888-8888', 'Unique');
+
+console.log(john)
+console.log(john.greeting())
+
+console.log(Customer.getMembershipCost())
